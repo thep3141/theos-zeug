@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>theos-stuff</title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theos Tools</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --accent:#22d3ee; }
+    *{box-sizing:border-box} body{
+      margin:0; font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--text);
+      display:flex; min-height:100dvh; align-items:center; justify-content:center; padding:32px;
+    }
+    .wrap{max-width:1000px; width:100%}
+    h1{font-size:clamp(28px,4vw,40px); margin:0 0 24px}
+    p.lead{opacity:.8; margin:0 0 28px}
+    .grid{
+      display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    }
+    .card{
+      background:linear-gradient(180deg, #141a2b, #0e1322);
+      border:1px solid #1f2937; border-radius:16px; padding:18px 16px; position:relative;
+      transition:transform .15s ease, border-color .15s ease;
+      text-decoration:none; color:inherit; display:block; min-height:140px;
+    }
+    .card:hover{ transform:translateY(-2px); border-color:#334155 }
+    .card h2{margin:4px 0 8px; font-size:18px}
+    .card p{margin:0; opacity:.8; font-size:14px; line-height:1.4}
+    .tag{position:absolute; top:12px; right:12px; font-size:12px; padding:4px 8px; border-radius:999px;
+      background:#0b1220; border:1px solid #1f2937; color:var(--accent)}
+    footer{opacity:.6; font-size:12px; margin-top:20px}
+  </style>
 </head>
 <body>
-  <h1>Hallo Welt 👋</h1>
-  <p>Das ist meine erste Website über GitHub Pages.</p>
+  <main class="wrap">
+    <h1>Theos Tool-Sammelplatz</h1>
+    <p class="lead">Kleine Projekte & Spielereien – alles an einem Ort.</p>
+
+    <section class="grid">
+      <a class="card" href="./brotato/">
+        <span class="tag">Neu</span>
+        <h2>Theos Brotato Stats</h2>
+        <p>Kleine Stat-Ansicht & Tracker. (WIP)</p>
+      </a>
+
+      <a class="card" href="./monster-hunter/">
+        <h2>Theos Monster Hunter Calculator</h2>
+        <p>Materialien planen, Drops checken, Farm-To-Do generieren.</p>
+      </a>
+
+      <a class="card" href="./lol-tools/">
+        <h2>Theos LoL Tools</h2>
+        <p>Random Champion Picker, Data-Snippets, kleine Dashboards.</p>
+      </a>
+    </section>
+
+    <footer>© <span id="y"></span> Theo – gebaut mit GitHub Pages</footer>
+  </main>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
